@@ -13,10 +13,6 @@ export const metadata: Metadata = {
   description: "Track cryptocurrency prices, manage your portfolio, and stay updated with the latest crypto market trends.",
   keywords: ["cryptocurrency", "bitcoin", "ethereum", "crypto dashboard", "portfolio tracker"],
   authors: [{ name: "CryptoTrack" }],
-  icons: {
-    icon: "/logo/crypto-track.png",
-    apple: "/logo/crypto-track.png",
-  },
   openGraph: {
     title: "CryptoTrack | Professional Cryptocurrency Dashboard",
     description: "Track cryptocurrency prices, manage your portfolio, and stay updated with the latest crypto market trends.",
