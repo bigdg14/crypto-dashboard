@@ -27,11 +27,12 @@ export function Navigation() {
         <div className="mr-4 flex">
           <Link href="/" className="mr-6 flex items-center space-x-2">
             <Image
-              src="/logo/crypto-track.png"
+              src="/logo/crypto-track.png?v=2"
               alt="CryptoTrack Logo"
               width={32}
               height={32}
               className="h-8 w-8"
+              priority
             />
             <span className="font-bold text-xl bg-gradient-to-r from-primary to-blue-600 bg-clip-text text-transparent">
               CryptoTrack
