@@ -5,6 +5,7 @@ import { usePathname } from "next/navigation"
 import { Home, TrendingUp, Wallet, Star, BarChart3, DollarSign, Newspaper } from "lucide-react"
 import { cn } from "@/lib/utils"
 import { ThemeToggle } from "./theme-toggle"
+import { UserMenu } from "./user-menu"
 
 const navItems = [
   { href: "/", label: "Dashboard", icon: Home },
@@ -53,6 +54,7 @@ export function Navigation() {
 
         <div className="flex items-center gap-2">
           <ThemeToggle />
+          <UserMenu />
         </div>
       </div>
     </header>

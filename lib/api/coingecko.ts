@@ -104,14 +104,12 @@ export const coinGeckoApi = {
   },
 
   // Get simple price for multiple coins
-  getSimplePrice: async (ids: string[], vs_currencies: string[] = ["usd"]) => {
+  getSimplePrice: async (ids: string, vs_currencies: string, options?: { include_24hr_change?: boolean }) => {
     const response = await api.get("/simple/price", {
       params: {
-        ids: ids.join(","),
-        vs_currencies: vs_currencies.join(","),
-        include_24hr_change: true,
-        include_market_cap: true,
-        include_24hr_vol: true,
+        ids,
+        vs_currencies,
+        ...options,
       },
     })
     return response.data

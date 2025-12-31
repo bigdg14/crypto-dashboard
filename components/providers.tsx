@@ -1,6 +1,7 @@
 "use client"
 
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query"
+import { SessionProvider } from "next-auth/react"
 import { ThemeProvider } from "./theme-provider"
 import { Toaster } from "./ui/sonner"
 import { useState } from "react"
@@ -20,11 +21,13 @@ export function Providers({ children }: { children: React.ReactNode }) {
   )
 
   return (
-    <QueryClientProvider client={queryClient}>
-      <ThemeProvider defaultTheme="dark" storageKey="crypto-dashboard-theme">
-        {children}
-        <Toaster richColors position="top-right" />
-      </ThemeProvider>
-    </QueryClientProvider>
+    <SessionProvider>
+      <QueryClientProvider client={queryClient}>
+        <ThemeProvider defaultTheme="dark" storageKey="crypto-dashboard-theme">
+          {children}
+          <Toaster richColors position="top-right" />
+        </ThemeProvider>
+      </QueryClientProvider>
+    </SessionProvider>
   )
 }

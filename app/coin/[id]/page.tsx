@@ -12,8 +12,9 @@ import { useCoinDetail, useCoinMarketChart } from "@/lib/hooks/useCrypto"
 import { CoinChart } from "@/components/crypto/coin-chart"
 import { PriceChange } from "@/components/crypto/price-change"
 import { formatCurrency, formatLargeNumber } from "@/lib/utils"
-import { Star, TrendingUp, TrendingDown } from "lucide-react"
+import { TrendingUp, TrendingDown } from "lucide-react"
 import { format } from "date-fns"
+import { AddToWatchlistButton } from "@/components/watchlist/add-to-watchlist-button"
 
 export default function CoinPage({ params }: { params: Promise<{ id: string }> }) {
   const { id } = use(params)
@@ -76,10 +77,11 @@ export default function CoinPage({ params }: { params: Promise<{ id: string }> }
               </div>
             </div>
           </div>
-          <Button variant="outline" size="lg">
-            <Star className="h-4 w-4 mr-2" />
-            Add to Watchlist
-          </Button>
+          <AddToWatchlistButton
+            coinId={id}
+            coinSymbol={coin.symbol}
+            coinName={coin.name}
+          />
         </div>
 
         {/* Price Overview */}

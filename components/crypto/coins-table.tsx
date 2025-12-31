@@ -16,8 +16,7 @@ import { useCoins } from "@/lib/hooks/useCrypto"
 import { formatCurrency, formatLargeNumber } from "@/lib/utils"
 import { PriceChange } from "./price-change"
 import { SparklineChart } from "./sparkline-chart"
-import { Star } from "lucide-react"
-import { Button } from "../ui/button"
+import { WatchlistIconButton } from "../watchlist/watchlist-icon-button"
 
 export function CoinsTable() {
   const { data: coins, isLoading, error } = useCoins(1, 20)
@@ -141,9 +140,13 @@ export function CoinsTable() {
                   )}
                 </TableCell>
                 <TableCell>
-                  <Button variant="ghost" size="icon" title="Add to watchlist">
-                    <Star className="h-4 w-4" />
-                  </Button>
+                  <div onClick={(e) => e.stopPropagation()}>
+                    <WatchlistIconButton
+                      coinId={coin.id}
+                      coinSymbol={coin.symbol}
+                      coinName={coin.name}
+                    />
+                  </div>
                 </TableCell>
               </TableRow>
             ))}

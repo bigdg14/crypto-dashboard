@@ -27,14 +27,14 @@ A feature-rich, real-time cryptocurrency tracking dashboard built with Next.js 1
 - **Fully responsive** - Mobile, tablet, and desktop optimized
 - **Professional color scheme** - Blues for positive, reds for negative changes
 
-### 🔥 Coming Soon (Already Structured)
-- Portfolio tracker with profit/loss calculations
-- Personal watchlist with database persistence
-- Comparison mode for multiple coins
-- Currency converter
-- Crypto news feed
-- Price alerts
-- User authentication (NextAuth.js)
+### 🔥 Advanced Features (Database Required)
+- ✅ **Portfolio Tracker** - Track holdings with real-time P/L
+- ✅ **Watchlist** - Save favorite coins
+- ✅ **Price Alerts** - Get notified at target prices
+- ✅ **User Authentication** - Secure login with NextAuth.js
+- ✅ **Comparison Tool** - Compare up to 4 coins
+- ✅ **Currency Converter** - Convert between cryptocurrencies
+- 🔜 **Crypto News Feed** - Coming soon
 
 ## 🛠️ Tech Stack
 
@@ -98,12 +98,26 @@ NEXT_PUBLIC_COINGECKO_API_KEY="your-demo-api-key-here"
 NEWS_API_KEY=""
 ```
 
-### 4. Set up Neon.tech Database
+### 4. Set up Neon.tech Database (Required for Portfolio, Watchlist, Alerts)
 
+**📖 Full guide:** See [DATABASE_SETUP.md](DATABASE_SETUP.md) for detailed instructions
+
+**Quick setup:**
 1. Go to [Neon.tech](https://neon.tech) and create a free account
 2. Create a new project
-3. Copy the connection string
+3. Copy the **Pooled connection** string
 4. Paste it into your `.env.local` as `DATABASE_URL`
+
+**Note:** Without a database, you can still use:
+- ✅ Market Overview Dashboard
+- ✅ Coin Detail Pages & Charts
+- ✅ Comparison Tool
+- ✅ Currency Converter
+
+But these features **require a database**:
+- ❌ Portfolio Tracker
+- ❌ Watchlist
+- ❌ Price Alerts
 
 ### 5. Push database schema
 
