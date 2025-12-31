@@ -1,6 +1,7 @@
 "use client"
 
 import Link from "next/link"
+import Image from "next/image"
 import { usePathname } from "next/navigation"
 import { Home, TrendingUp, Wallet, Star, BarChart3, DollarSign, Newspaper } from "lucide-react"
 import { cn } from "@/lib/utils"
@@ -25,7 +26,13 @@ export function Navigation() {
       <div className="container flex h-16 items-center">
         <div className="mr-4 flex">
           <Link href="/" className="mr-6 flex items-center space-x-2">
-            <TrendingUp className="h-6 w-6 text-primary" />
+            <Image
+              src="/logo/crypto-track.png"
+              alt="CryptoTrack Logo"
+              width={32}
+              height={32}
+              className="h-8 w-8"
+            />
             <span className="font-bold text-xl bg-gradient-to-r from-primary to-blue-600 bg-clip-text text-transparent">
               CryptoTrack
             </span>
