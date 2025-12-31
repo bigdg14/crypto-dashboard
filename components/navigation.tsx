@@ -31,7 +31,7 @@ export function Navigation() {
               alt="CryptoTrack Logo"
               width={32}
               height={32}
-              className="h-8 w-8"
+              className="h-12 w-12"
               priority
               unoptimized
             />

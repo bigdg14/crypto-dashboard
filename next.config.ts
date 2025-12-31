@@ -18,6 +18,8 @@ const nextConfig: NextConfig = {
         pathname: '/assets/icons/**',
       },
     ],
+    dangerouslyAllowSVG: true,
+    unoptimized: false,
   },
 };
 
